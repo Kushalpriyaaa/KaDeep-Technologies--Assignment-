@@ -3,6 +3,5 @@
   "outputDirectory": "client/dist",
   "framework": "vite",
   "installCommand": "npm install && cd client && npm install",
-  "devCommand": "cd client && npm run dev",
-  "ignoreCommand": "git diff --quiet HEAD^ HEAD ./client"
+  "devCommand": "cd client && npm run dev"
 }
