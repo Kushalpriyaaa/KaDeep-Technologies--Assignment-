@@ -1,0 +1,123 @@
+.restaurant-status-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+  padding: 20px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.restaurant-status-modal {
+  background: white;
+  border-radius: 25px;
+  padding: 40px;
+  max-width: 450px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.4s ease;
+  position: relative;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.status-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.restaurant-status-modal h2 {
+  margin: 0 0 15px 0;
+  color: #e74c3c;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.restaurant-status-modal p {
+  margin: 0 0 10px 0;
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.status-subtitle {
+  color: #999 !important;
+  font-size: 0.95rem !important;
+  margin-bottom: 25px !important;
+}
+
+.status-ok-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.status-ok-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+.status-ok-btn:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .restaurant-status-modal {
+    padding: 30px 20px;
+  }
+
+  .restaurant-status-modal h2 {
+    font-size: 1.5rem;
+  }
+
+  .restaurant-status-modal p {
+    font-size: 1rem;
+  }
+
+  .status-ok-btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+}

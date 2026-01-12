@@ -1,0 +1,156 @@
+.delivery-container {
+  min-height: 100vh;
+  background: #f5f5f5;
+  padding-bottom: 80px;
+}
+
+.delivery-header {
+  background: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.delivery-header h1 {
+  margin: 0;
+  color: #333;
+}
+
+.delivery-list {
+  padding: 20px;
+}
+
+.delivery-card {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.order-info h3 {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 1.3rem;
+}
+
+.order-info p {
+  margin: 8px 0;
+  color: #666;
+}
+
+.restaurant, .customer, .address {
+  padding-left: 5px;
+}
+
+.order-actions {
+  margin-top: 15px;
+}
+
+.btn-pickup {
+  background: #00d9ff;
+  color: #333;
+  padding: 10px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.btn-pickup:hover {
+  background: #00c3e6;
+}
+
+.pickup-details, .confirm-details {
+  padding: 20px;
+}
+
+.detail-card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.detail-card h3 {
+  margin: 0 0 20px 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.detail-row .label {
+  color: #666;
+  font-weight: 600;
+}
+
+.detail-row .value {
+  color: #333;
+}
+
+.btn-confirm-pickup, .btn-complete-delivery {
+  width: 100%;
+  background: #00d9ff;
+  color: #333;
+  border: none;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+.btn-confirm-pickup:hover, .btn-complete-delivery:hover {
+  background: #00c3e6;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #999;
+  padding: 5px 15px;
+  transition: all 0.3s ease;
+}
+
+.nav-item.active {
+  color: #00d9ff;
+}
+
+.nav-icon {
+  font-size: 1.5rem;
+  margin-bottom: 3px;
+}
+
+.nav-item span:last-child {
+  font-size: 0.75rem;
+  font-weight: 600;
+}

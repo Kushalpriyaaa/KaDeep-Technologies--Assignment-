@@ -1,0 +1,444 @@
+/* Serving Hours - Premium Layout */
+
+/* Global Settings Card */
+.hours-layout-single {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.global-settings-card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f0f0f0;
+  margin-bottom: 30px;
+}
+
+.settings-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.setting-info h3 {
+  margin: 0 0 5px 0;
+  color: var(--dark);
+  font-size: 1.2rem;
+}
+
+.setting-info p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.toggle-label-side {
+  margin-left: 15px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  min-width: 80px;
+  display: inline-block;
+}
+
+.closure-reason-input {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px dashed #eee;
+}
+
+.closure-reason-input label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #444;
+}
+
+.closure-reason-input input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.closure-reason-input input:focus {
+  border-color: var(--primary);
+  background: #fff8f5;
+}
+
+/* Slots Container */
+.slots-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.slot-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eee;
+  transition: all 0.3s ease;
+}
+
+.slot-card.open {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  transform: scale(1.01);
+}
+
+.slot-card.inactive {
+  opacity: 0.8;
+  filter: grayscale(0.5);
+}
+
+/* Slot Header Colors */
+.slot-breakfast .slot-header {
+  border-left: 6px solid #FF9800;
+}
+
+.slot-lunch .slot-header {
+  border-left: 6px solid #4CAF50;
+}
+
+.slot-dinner .slot-header {
+  border-left: 6px solid #2196F3;
+}
+
+.slot-header {
+  padding: 20px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background: white;
+  transition: background 0.2s;
+}
+
+.slot-header:hover {
+  background: #fbfbfb;
+}
+
+.slot-title-group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.slot-icon {
+  font-size: 0.8rem;
+  color: #999;
+  width: 20px;
+}
+
+.slot-title-group h2 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: var(--dark);
+  font-weight: 700;
+}
+
+.time-pill {
+  background: #f0f0f0;
+  color: #666;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid #e0e0e0;
+}
+
+.status-pill.inactive {
+  background: #ffebee;
+  color: #c62828;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.slot-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.item-count-badge {
+  color: #888;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Category Content (Inside Slot) */
+.category-content {
+  padding: 30px;
+  background: #fcfcfc;
+  border-top: 1px solid #f0f0f0;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Time Inputs */
+.time-section {
+  margin-bottom: 30px;
+  padding-bottom: 25px;
+  border-bottom: 1px dashed #e0e0e0;
+}
+
+.time-controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #f0f0f0;
+  width: fit-content;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.time-input-group label {
+  display: block;
+  font-size: 0.8rem;
+  color: #888;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.time-input-group input {
+  font-size: 1.1rem;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  color: #333;
+  outline: none;
+}
+
+.time-input-group input:focus {
+  border-color: var(--primary);
+}
+
+/* Items List */
+.items-section h3 {
+  margin: 0 0 20px 0;
+  font-size: 1.1rem;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-item-btn-small {
+  background: white;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.add-item-btn-small:hover {
+  background: #fff8f5;
+  transform: translateY(-2px);
+}
+
+.category-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.admin-item {
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  gap: 15px;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.admin-item:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.item-image {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.item-details h3 {
+  margin: 0 0 5px 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.item-price {
+  background: #f0f0f0;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  margin-left: 8px;
+  color: #666;
+  font-weight: 600;
+}
+
+.item-details p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #888;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.item-actions {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.delete-btn {
+  background: #ffebee;
+  color: #d32f2f;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.delete-btn:hover {
+  background: #ffcdd2;
+  transform: scale(1.1);
+}
+
+/* Add Item Form */
+.add-item-form-card {
+  background: #f9f9f9;
+  border: 2px dashed #e0e0e0;
+  padding: 25px;
+  border-radius: 16px;
+  margin-bottom: 25px;
+}
+
+.add-item-form-card h4 {
+  margin: 0 0 15px 0;
+  color: #555;
+}
+
+.uploaded-image-preview {
+  display: flex;
+  align-items: center;
+}
+
+.save-btn-primary {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+  transition: all 0.3s;
+}
+
+.save-btn-primary:hover {
+  background: #e55a2b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+}
+
+@media (max-width: 768px) {
+  .settings-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .toggle-label-side {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .slot-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .slot-header-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .time-controls {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .category-items {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .global-settings-card,
+  .category-content {
+    padding: 20px;
+  }
+
+  .slot-title-group h2 {
+    font-size: 1.1rem;
+  }
+
+  .admin-item {
+    flex-direction: column;
+  }
+
+  .item-image {
+    width: 100%;
+    height: 150px;
+  }
+}

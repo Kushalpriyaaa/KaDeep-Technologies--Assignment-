@@ -1,0 +1,476 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.signup-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+/* Left Side - Form Section */
+.signup-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 60px;
+  background: #ffffff;
+  overflow-y: auto;
+  max-width: 550px;
+}
+
+.signup-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 60px;
+}
+
+.brand-logo {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  margin-left:-80px;
+  margin-top: -68px;
+}
+
+.brand-name {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.signup-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 450px;
+}
+
+.signup-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.signup-subtitle {
+  font-size: 16px;
+  color: #6b7280;
+  margin-bottom: 32px;
+}
+
+/* Google Sign In Button */
+.google-signin-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 14px 24px;
+  background: #ffffff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 24px;
+}
+
+.google-signin-btn:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.google-signin-btn:active {
+  transform: translateY(0);
+}
+
+.google-signin-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.google-signin-btn svg {
+  flex-shrink: 0;
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 24px 0;
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #e5e7eb;
+}
+
+.divider span {
+  padding: 0 16px;
+}
+
+/* Error Alert */
+.error-alert {
+  padding: 12px 16px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  color: #dc2626;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* Form */
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 15px;
+  color: #1f2937;
+  transition: all 0.2s ease;
+  background: #ffffff;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.form-group input::placeholder {
+  color: #9ca3af;
+}
+
+.password-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-field input {
+  width: 100%;
+  padding-right: 48px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.toggle-password:hover {
+  opacity: 1;
+}
+
+/* Create Account Button */
+.create-account-btn {
+  width: 100%;
+  padding: 14px 24px;
+  background: #1f2937;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 8px;
+}
+
+.create-account-btn:hover {
+  background: #111827;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.create-account-btn:active {
+  transform: translateY(0);
+}
+
+/* Footer */
+.signup-footer {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.signup-footer a {
+  color: #6366f1;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.signup-footer a:hover {
+  color: #4f46e5;
+  text-decoration: underline;
+}
+
+/* Right Side - Image Carousel */
+.signup-right {
+  flex: 1;
+  position: relative;
+  background: linear-gradient(135deg, #c23a30 50%, #b11515 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.image-carousel {
+  position: relative;
+  width: 90%;
+  height: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.8s ease-in-out;
+  border-radius: 20px;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.2));
+}
+
+.carousel-image.active {
+  opacity: 1;
+  transform: translateY(0);
+  animation: slideUpFromBottom 0.8s ease-in-out;
+}
+
+@keyframes slideUpFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  gap: 12px;
+  z-index: 10;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  width: 32px;
+  border-radius: 5px;
+  background: #ffffff;
+}
+
+.indicator:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .signup-left {
+    max-width: 480px;
+    padding: 40px 40px;
+  }
+
+  .signup-title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .signup-container {
+    flex-direction: column;
+    background: linear-gradient(to bottom, #ff6b35 0%, #ff6b35 35%, #ffffff 35%, #ffffff 100%);
+  }
+
+  .signup-left {
+    max-width: 100%;
+    padding: 0;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .signup-brand {
+    width: 100%;
+    justify-content: center;
+    padding: 40px 20px 20px;
+    margin-bottom: 0;
+    background: transparent;
+  }
+
+  .brand-logo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: white;
+    padding: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .brand-name {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 28px;
+    color: #ff6b35;
+  }
+
+  .signup-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 30px 24px;
+    background: white;
+    border-radius: 30px 30px 0 0;
+    margin-top: -30px;
+  }
+
+  .signup-right {
+    display: none;
+  }
+
+  .signup-title {
+    font-size: 28px;
+  }
+
+  .image-carousel {
+    width: 95%;
+    height: 80%;
+  }
+
+  .carousel-indicators {
+    bottom: 20px;
+  }
+
+  .form-group input,
+  .password-field input {
+    border-radius: 25px;
+    padding: 14px 20px;
+    background: #f9f9f9;
+    border: 1px solid #e5e7eb;
+  }
+
+  .create-account-btn {
+    border-radius: 25px;
+    padding: 14px 24px;
+    background: #ff6b35;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+
+  .create-account-btn:hover {
+    background: #ff5722;
+  }
+
+  .google-signin-btn {
+    border-radius: 25px;
+    margin-top: 10px;
+  }
+
+  .divider {
+    margin: 20px 0;
+  }
+
+  .signup-footer {
+    margin-top: 20px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .signup-left {
+    padding: 24px 20px;
+  }
+
+  .signup-brand {
+    margin-bottom: 40px;
+  }
+
+  .signup-title {
+    font-size: 24px;
+  }
+
+  .signup-subtitle {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .google-signin-btn,
+  .create-account-btn {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  .form-group input {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+}

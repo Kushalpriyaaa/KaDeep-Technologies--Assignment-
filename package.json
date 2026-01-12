@@ -1,0 +1,13 @@
+{
+  "name": "sah-one",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "npm run dev --prefix client & npx convex dev",
+    "client": "npm run dev --prefix client",
+    "convex": "npx convex dev"
+  },
+  "devDependencies": {
+    "convex": "^1.31.2"
+  }
+}

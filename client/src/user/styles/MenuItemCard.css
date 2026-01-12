@@ -1,0 +1,715 @@
+/* Menu Item Card - Reusable Component */
+.menu-item-card,
+.menu-card-v2 {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  display: flex !important;
+  flex-direction: column !important;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  height: 100% !important;
+  max-height: 420px !important;
+  max-width: 380px !important;
+  width: 100% !important;
+}
+
+/* Desktop: Grid card sizing */
+@media (min-width: 1024px) {
+  .menu-item-card,
+  .menu-card-v2 {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+
+.menu-item-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(226, 55, 68, 0.15);
+  border-color: rgba(226, 55, 68, 0.2);
+}
+
+.menu-item-image-wrapper {
+  width: 100%;
+  height: 200px !important;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  position: relative;
+}
+
+.menu-item-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.menu-item-card:hover .menu-item-image-wrapper img {
+  transform: scale(1.05);
+}
+
+.menu-item-content {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.menu-item-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 6px 0;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.menu-item-category {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin: 0 0 8px 0;
+  text-transform: capitalize;
+}
+
+.menu-item-description {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0 0 12px 0;
+  line-height: 1.5;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  max-height: 2.7em !important;
+}
+
+.menu-item-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.menu-item-price {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #e23744;
+  margin: 0;
+}
+
+.add-to-cart-btn {
+  background: linear-gradient(135deg, #ff3b30 0%, #e53935 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(255, 59, 48, 0.25);
+}
+
+.add-to-cart-btn:hover {
+  background: linear-gradient(135deg, #e53935 0%, #ff3b30 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 59, 48, 0.35);
+}
+
+.add-to-cart-btn:active {
+  transform: translateY(0);
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f0f0f0;
+  padding: 6px 8px;
+  border-radius: 10px;
+}
+
+.qty-btn {
+  background: linear-gradient(135deg, #ff3b30 0%, #e53935 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  width: 28px;
+  height: 28px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.qty-btn:hover {
+  background: linear-gradient(135deg, #e53935 0%, #ff3b30 100%);
+  transform: scale(1.1);
+}
+
+.qty-btn:active {
+  transform: scale(0.95);
+}
+
+.qty-number {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  min-width: 24px;
+  text-align: center;
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+  .menu-item-image-wrapper {
+    height: 200px;
+  }
+
+  .menu-item-name {
+    font-size: 1.2rem;
+  }
+
+  .menu-item-price {
+    font-size: 1.35rem;
+  }
+
+  .add-to-cart-btn {
+    padding: 9px 18px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .menu-item-card,
+  .menu-card-v2 {
+    flex-direction: row !important;
+    max-height: none !important;
+    max-width: none !important;
+    height: auto !important;
+  }
+
+  .menu-item-image-wrapper {
+    width: 120px !important;
+    height: 120px !important;
+    min-width: 120px;
+    flex-shrink: 0;
+  }
+
+  .menu-item-image-wrapper img {
+    border-radius: 12px;
+  }
+
+  .menu-item-content {
+    padding: 12px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .menu-item-name {
+    font-size: 1rem;
+    -webkit-line-clamp: 1;
+    margin-bottom: 4px;
+  }
+
+  .menu-item-category {
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+  }
+
+  .menu-item-description {
+    font-size: 0.8rem;
+    -webkit-line-clamp: 2 !important;
+    margin-bottom: 8px;
+  }
+
+  .menu-item-footer {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .menu-item-price {
+    font-size: 1.1rem;
+  }
+
+  .add-to-cart-btn {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+
+  .quantity-controls {
+    padding: 4px 6px;
+    gap: 8px;
+  }
+
+  .qty-btn {
+    width: 24px;
+    height: 24px;
+    font-size: 1rem;
+  }
+
+  .qty-number {
+    font-size: 0.9rem;
+    min-width: 20px;
+  }
+
+  .portion-row {
+    padding: 8px 10px;
+  }
+
+  .portion-label-small {
+    font-size: 0.75rem;
+  }
+
+  .portion-price-small {
+    font-size: 0.95rem;
+  }
+
+  .add-portion-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 1.1rem;
+  }
+
+  .add-portion-btn-text {
+    padding: 6px 16px;
+    font-size: 0.85rem;
+  }
+
+  .initial-price-display {
+    gap: 10px;
+  }
+
+  .price-info-section {
+    gap: 15px;
+  }
+
+  .price-label {
+    font-size: 0.85rem;
+  }
+
+  .price-value {
+    font-size: 1rem;
+  }
+}
+
+/* Portion Selection Modal */
+.portion-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.portion-modal {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.portion-modal h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.5rem;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.item-name-modal {
+  text-align: center;
+  color: #6c757d;
+  margin: 0 0 25px 0;
+  font-size: 1rem;
+}
+
+.portion-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.portion-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 2px solid transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.portion-option:hover {
+  background: linear-gradient(135deg, #ff3b30 0%, #e53935 100%);
+  border-color: #e23744;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(226, 55, 68, 0.3);
+}
+
+.portion-option:hover .portion-label,
+.portion-option:hover .portion-price {
+  color: white;
+}
+
+.portion-label {
+  font-weight: 600;
+  color: #f35e0f;
+}
+
+.portion-price {
+  font-weight: 700;
+  color: #e23744;
+  font-size: 1.2rem;
+}
+
+.close-modal-btn {
+  width: 100%;
+  padding: 12px;
+  background: #f0f0f0;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.close-modal-btn:hover {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.price-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.menu-item-price-label {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.menu-item-price-label .menu-item-price {
+  font-size: 1.1rem;
+}
+
+/* Portion Controls in Card */
+.portion-controls-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.portion-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  border: 1px solid #e9ecef;
+}
+
+.portion-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.portion-label-small {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #495057;
+}
+
+.portion-price-small {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #e23744;
+}
+
+.add-portion-btn {
+  background: linear-gradient(135deg, #ff3b30 0%, #e53935 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  width: 32px;
+  height: 32px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(255, 59, 48, 0.3);
+}
+
+.add-portion-btn:hover {
+  background: linear-gradient(135deg, #e53935 0%, #ff3b30 100%);
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(255, 59, 48, 0.4);
+}
+
+.add-portion-btn:active {
+  transform: scale(0.95);
+}
+
+.add-portion-btn-text {
+  background: linear-gradient(135deg, #ff3b30 0%, #e53935 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(255, 59, 48, 0.3);
+}
+
+.add-portion-btn-text:hover {
+  background: linear-gradient(135deg, #e53935 0%, #ff3b30 100%);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(255, 59, 48, 0.4);
+}
+
+.add-portion-btn-text:active {
+  transform: scale(0.95);
+}
+
+/* Initial Price Display */
+.initial-price-display {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.price-info-section {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.price-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+.price-item:first-child {
+  background-color: #ffe5e5;
+}
+
+.price-item:last-child {
+  background-color: #fff9e5;
+}
+
+.price-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.price-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #e23744;
+}
+
+/* Mobile adjustments for modal */
+@media (max-width: 480px) {
+  .portion-modal {
+    padding: 25px 20px;
+  }
+
+  .portion-modal h3 {
+    font-size: 1.3rem;
+  }
+
+  .portion-option {
+    padding: 15px 20px;
+    font-size: 1rem;
+  }
+
+  .portion-price {
+    font-size: 1.1rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .menu-item-card,
+  .menu-card-v2 {
+    flex-direction: row !important;
+    max-height: none !important;
+    max-width: none !important;
+  }
+
+  .menu-item-image-wrapper {
+    width: 100px !important;
+    height: 100px !important;
+    min-width: 100px;
+  }
+
+  .menu-item-content {
+    padding: 10px;
+  }
+
+  .menu-item-name {
+    font-size: 0.95rem;
+    -webkit-line-clamp: 1;
+  }
+
+  .menu-item-category {
+    font-size: 0.75rem;
+  }
+
+  .menu-item-description {
+    font-size: 0.75rem;
+    -webkit-line-clamp: 1 !important;
+  }
+
+  .menu-item-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .menu-item-price {
+    font-size: 1rem;
+  }
+
+  .add-to-cart-btn {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 0.75rem;
+  }
+
+  .quantity-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .portion-controls-container {
+    gap: 8px;
+  }
+
+  .portion-row {
+    padding: 6px 8px;
+  }
+
+  .portion-label-small {
+    font-size: 0.7rem;
+  }
+
+  .portion-price-small {
+    font-size: 0.85rem;
+  }
+
+  .add-portion-btn {
+    width: 24px;
+    height: 24px;
+    font-size: 1rem;
+  }
+
+  .quantity-controls {
+    padding: 3px 5px;
+    gap: 6px;
+  }
+
+  .qty-btn {
+    width: 22px;
+    height: 22px;
+    font-size: 0.9rem;
+  }
+
+  .qty-number {
+    font-size: 0.85rem;
+    min-width: 18px;
+  }
+
+  .add-portion-btn-text {
+    padding: 5px 14px;
+    font-size: 0.8rem;
+  }
+
+  .initial-price-display {
+    gap: 8px;
+  }
+
+  .price-info-section {
+    gap: 12px;
+  }
+
+  .price-label {
+    font-size: 0.8rem;
+  }
+
+  .price-value {
+    font-size: 0.95rem;
+  }
+
+  .add-to-cart-btn {
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+}

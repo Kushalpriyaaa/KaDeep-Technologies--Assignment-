@@ -1,0 +1,209 @@
+/* Home Page Specific Styles */
+
+.hero-carousel-dynamic {
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  overflow: hidden;
+  transition: background 0.5s ease;
+  background-position: center;
+  background-size: cover;
+}
+
+.hero-carousel-white {
+  background:rgb(221, 219, 218) !important;
+}
+
+/* Mobile Hero Search Bar */
+.mobile-hero-search {
+  display: none; /* Hidden on desktop */
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 30px;
+  z-index: 50;
+}
+
+.mobile-hero-search input {
+  width: 100%;
+  padding: 16px 50px 16px 20px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  color: #333;
+}
+
+.mobile-hero-search input::placeholder {
+  color: #999;
+  font-weight: 400;
+}
+
+.mobile-hero-search input:focus {
+  outline: none;
+  box-shadow: 0 6px 30px rgba(226, 55, 68, 0.3);
+  background: white;
+  transform: translateY(-2px);
+}
+
+.search-icon-btn {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, #e23744 0%, #ff6b6b 100%);
+  border: none;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.search-icon-btn:hover {
+  transform: translateY(-50%) scale(1.05);
+  box-shadow: 0 4px 15px rgba(226, 55, 68, 0.4);
+}
+
+.search-icon-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* Tablet responsive */
+@media (max-width: 1024px) {
+  .hero-carousel-dynamic {
+    min-height: 400px;
+    padding: 40px 20px;
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .hero-carousel-dynamic {
+    min-height: 300px;
+    padding: 30px 15px;
+  }
+
+  /* Show mobile search bar */
+  .mobile-hero-search {
+    display: block;
+  }
+
+  .mobile-hero-search input {
+    padding: 14px 45px 14px 18px;
+    font-size: 0.95rem;
+  }
+
+  .search-icon-btn {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .hero-carousel-dynamic {
+    min-height: 250px;
+    padding: 20px 10px;
+  }
+
+  .mobile-hero-search {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .mobile-hero-search input {
+    padding: 12px 40px 12px 16px;
+    font-size: 0.9rem;
+    border-radius: 10px;
+  }
+
+  .search-icon-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .search-icon-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Floating Menu Button */
+.floating-menu-btn {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background: linear-gradient(135deg, #e23744 0%, #ff6b6b 100%);
+  color: white;
+  padding: 14px 24px;
+  border-radius: 50px;
+  border: none;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  box-shadow: 0 8px 25px rgba(226, 55, 68, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 999;
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.floating-menu-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(226, 55, 68, 0.5);
+  background: linear-gradient(135deg, #ff6b6b 0%, #e23744 100%);
+}
+
+.floating-menu-btn .arrow {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.floating-menu-btn:hover .arrow {
+  transform: translateX(5px);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 8px 25px rgba(226, 55, 68, 0.4);
+  }
+  50% {
+    box-shadow: 0 8px 35px rgba(226, 55, 68, 0.6);
+  }
+}
+
+@media (max-width: 768px) {
+  .floating-menu-btn {
+    bottom: 20px;
+    right: 15px;
+    padding: 12px 20px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-menu-btn {
+    bottom: 15px;
+    right: 10px;
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+  
+  .floating-menu-btn .arrow {
+    font-size: 18px;
+  }
+}

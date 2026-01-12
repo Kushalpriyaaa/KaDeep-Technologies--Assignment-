@@ -1,0 +1,285 @@
+/* Dark Overlay */
+.category-popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.85) 100%);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    animation: fadeIn 0.4s ease-out;
+}
+
+/* Modal Content */
+.category-popup-content {
+    width: 100%;
+    max-width: 480px;
+    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+    border-radius: 24px 24px 0 0;
+    padding: 0;
+    box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    color: #fff;
+    max-height: 85vh;
+    overflow: hidden;
+    animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+}
+
+/* Header Section */
+.popup-header {
+    background: linear-gradient(135deg, #ff3b30 0%, #e53935 100%);
+    padding: 24px 24px 20px 24px;
+    position: relative;
+    box-shadow: 0 4px 16px rgba(229, 57, 53, 0.3);
+}
+
+.popup-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        rgba(255, 255, 255, 0.3) 0%, 
+        rgba(255, 255, 255, 0.6) 50%, 
+        rgba(255, 255, 255, 0.3) 100%);
+}
+
+.popup-title h3 {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1.2;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.5px;
+}
+
+.popup-title span {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    display: block;
+}
+
+.item-count-badge {
+    background: white;
+    color: #ff3b30;
+    font-size: 0.9rem;
+    font-weight: 800;
+    padding: 6px 14px;
+    border-radius: 16px;
+    min-width: 32px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Category List */
+.category-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 20px 16px;
+    max-height: calc(85vh - 200px);
+    overflow-y: auto;
+}
+
+.category-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.category-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.category-list::-webkit-scrollbar-thumb {
+    background: rgba(229, 57, 53, 0.5);
+    border-radius: 10px;
+}
+
+.category-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(229, 57, 53, 0.8);
+}
+
+.category-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    width: 100%;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.category-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #ff3b30 0%, #e53935 100%);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.category-item:hover {
+    background: rgba(229, 57, 53, 0.15);
+    border-color: rgba(229, 57, 53, 0.3);
+    transform: translateX(6px);
+    box-shadow: 0 4px 16px rgba(229, 57, 53, 0.2);
+}
+
+.category-item:hover::before {
+    transform: scaleY(1);
+}
+
+.category-item:active {
+    transform: translateX(3px) scale(0.98);
+}
+
+.category-name {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 600;
+    flex: 1;
+}
+
+.category-count {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 600;
+    background: rgba(229, 57, 53, 0.2);
+    padding: 6px 14px;
+    border-radius: 12px;
+    min-width: 40px;
+    text-align: center;
+}
+
+.arrow-right {
+    font-size: 1.5rem;
+    color: #ff3b30;
+    font-weight: 300;
+    margin-left: 12px;
+}
+
+/* Highlight Item (Book Table/Party) */
+.category-item.highlight-item {
+    background: linear-gradient(135deg, rgba(229, 57, 53, 0.25) 0%, rgba(211, 47, 47, 0.25) 100%);
+    border: 2px solid rgba(229, 57, 53, 0.5);
+    box-shadow: 0 4px 20px rgba(229, 57, 53, 0.3);
+    margin-bottom: 12px;
+}
+
+.category-item.highlight-item::before {
+    width: 6px;
+}
+
+.category-item.highlight-item:hover {
+    background: linear-gradient(135deg, rgba(229, 57, 53, 0.35) 0%, rgba(211, 47, 47, 0.35) 100%);
+    border-color: #ff3b30;
+    box-shadow: 0 6px 24px rgba(229, 57, 53, 0.5);
+    transform: translateX(8px) scale(1.02);
+}
+
+.category-item.highlight-item .category-name {
+    color: white;
+    font-weight: 700;
+}
+
+/* Highlight "Large Order Menu" specifically if needed, or other special items */
+.category-item.special-item {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    margin-top: 8px;
+}
+
+.category-item.special-item .category-name {
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+/* Close Button in Footer/Bottom */
+.popup-footer {
+    margin: 0;
+    padding: 20px 24px 28px 24px;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.close-btn {
+    background: linear-gradient(135deg, rgba(229, 57, 53, 0.15) 0%, rgba(211, 47, 47, 0.15) 100%);
+    color: #fff;
+    border: 1px solid rgba(229, 57, 53, 0.4);
+    padding: 14px 40px;
+    border-radius: 30px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(229, 57, 53, 0.2);
+}
+
+.close-btn span {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.close-btn:hover {
+    background: linear-gradient(135deg, rgba(229, 57, 53, 0.25) 0%, rgba(211, 47, 47, 0.25) 100%);
+    border-color: #ff3b30;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(229, 57, 53, 0.4);
+}
+
+.close-btn:active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .category-popup-overlay {
+        align-items: center;
+    }
+
+    .category-popup-content {
+        border-radius: 20px;
+        max-height: 80vh;
+    }
+}
