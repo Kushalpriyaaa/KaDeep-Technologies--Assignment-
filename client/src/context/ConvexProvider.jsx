@@ -2,7 +2,7 @@ import { ConvexProvider as BaseConvexProvider } from 'convex/react';
 import { ConvexReactClient } from 'convex/react';
 import { useState, createContext, useContext } from 'react';
 
-const convexUrl = import.meta.env.VITE_CONVEX_URL || 'https://rare-woodpecker-208.convex.cloud';
+const convexUrl = String(import.meta.env.VITE_CONVEX_URL || 'https://rare-woodpecker-208.convex.cloud');
 const convex = new ConvexReactClient(convexUrl);
 
 const ConvexContext = createContext();
