@@ -9,6 +9,9 @@ export default defineConfig({
     open: true
   },
   build: {
-    outDir: 'dist'
+    outDir: 'dist',
+    rollupOptions: {
+      external: ['convex/server']
+    }
   }
 })
