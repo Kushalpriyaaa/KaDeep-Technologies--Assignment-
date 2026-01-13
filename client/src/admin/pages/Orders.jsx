@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import '../styles/orders.css';
 import { useQuery, useMutation } from 'convex/react';
-import { api } from '../../../../convex/_generated/api';
+import { api } from '../../convex-api/api';
 
 export default function Orders() {
   const [activeTab, setActiveTab] = useState('All');

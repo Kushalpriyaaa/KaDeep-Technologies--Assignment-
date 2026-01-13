@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { useQuery, useMutation } from 'convex/react';
-import { api } from '../../../../convex/_generated/api';
+import { api } from '../../convex-api/api';
 import Navbar from '../components/Navbar';
 import '../styles/profile.css'; // We'll need to make sure this exists or reuse user profile styles
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useQuery } from 'convex/react';
-import { api } from '../../../../convex/_generated/api';
+import { api } from '../../convex-api/api';
 import Navbar from '../components/Navbar';
 import { useCart } from '../../context/CartContext';
 import '../styles/pages.css';

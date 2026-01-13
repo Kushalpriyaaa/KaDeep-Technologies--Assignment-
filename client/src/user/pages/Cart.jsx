@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
 import { useAuth } from '../../context/AuthContext';
 import { useQuery, useMutation } from 'convex/react';
-import { api } from '../../../../convex/_generated/api';
+import { api } from '../../convex-api/api';
 import CategoryPopup from '../components/CategoryPopup';
 import PaymentModal from '../components/PaymentModal';
 import '../styles/pages.css';

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useQuery } from 'convex/react';
-import { api } from '../../../../convex/_generated/api';
+import { api } from '../../convex-api/api';
 import '../styles/CategoryPopup.css';
 
 export default function CategoryPopup({ isOpen, onClose, onOpenPartyModal }) {

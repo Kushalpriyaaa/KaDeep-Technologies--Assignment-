@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import '../styles/dashboard.css';
 import { useQuery } from 'convex/react';
-import { api } from '../../../../convex/_generated/api';
+import { api } from '../../convex-api/api';
 
 export default function Dashboard() {
   const stats = useQuery(api.modules.orders.orders.getOrderStatistics) || {
