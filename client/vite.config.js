@@ -14,17 +14,29 @@ const stubConvexServer = () => ({
       // Create a deep proxy that returns function reference strings
       return `
         const createDeepProxy = (path = []) => {
-          return new Proxy(() => {}, {
+          const handler = {
             get(target, prop) {
-              if (prop === 'toString' || prop === Symbol.toStringTag) {
-                return () => path.join(':');
+              // Handle special properties
+              if (prop === 'toString') {
+                return () => path.filter(p => typeof p === 'string').join(':');
               }
+              if (prop === Symbol.toStringTag) {
+                return 'ConvexFunction';
+              }
+              if (prop === Symbol.toPrimitive || prop === 'valueOf') {
+                return () => path.filter(p => typeof p === 'string').join(':');
+              }
+              if (typeof prop === 'symbol') {
+                return undefined;
+              }
+              // Continue building the path for nested access
               return createDeepProxy([...path, prop]);
             },
             apply(target, thisArg, args) {
-              return path.join(':');
+              return path.filter(p => typeof p === 'string').join(':');
             }
-          });
+          };
+          return new Proxy(() => {}, handler);
         };
         
         export const componentsGeneric = () => ({});
